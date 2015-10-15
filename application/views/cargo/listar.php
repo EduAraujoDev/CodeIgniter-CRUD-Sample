@@ -8,6 +8,11 @@
 	<h1><?php echo $titulo;?></h1>
 	<h2><?php echo $subTitulo;?></h2>
 
+	<a href="<?php echo base_url() ?>">Principal</a> |
+	<a href="<?php echo base_url().'cargo/listar' ?>">Listar</a> |
+
+	<br><br>
+
 	<?php
 		foreach ($cargos as $cargo) {
 			$this->table->add_row($cargo->id_cargo, $cargo->nome);
