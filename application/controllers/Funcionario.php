@@ -5,13 +5,16 @@ class Funcionario extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
+
+        $this->load->model('funcionario_model','funcionario_model');
     }
 
     public function listar()
 	{
 		$dados = array(
 			'titulo' => 'CodeIgniter - CRUD',
-			'subTitulo' => 'Listar Funcionarios'
+			'subTitulo' => 'Listar Funcionarios',
+			'funcionarios' => $this->funcionario_model->get_funcionarios_all()->result()
 		);
 
 		$this->load->view('funcionario/listar', $dados);

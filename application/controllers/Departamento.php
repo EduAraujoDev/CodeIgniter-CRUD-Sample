@@ -17,6 +17,6 @@ class Departamento extends CI_Controller {
 			'departamentos' => $this->departamento_model->get_departamentos_all()->result()
 		);
 
-		$this->load->view('Departamento/listar', $dados);
+		$this->load->view('departamento/listar', $dados);
 	}
 }
