@@ -33,18 +33,30 @@ class Cargo extends CI_Controller {
 
 	public function inserirNovoCargo()
 	{
-		$dados = array(
-				'nome' => $this->input->post('cargo')
-			);
+		$this->form_validation->set_rules('cargo', 'cargo', 'required');
+        $this->form_validation->set_message('required','Digite um nome para o novo cargo!');
 
-		$this->cargo_model->set_cargo($dados);
+		if($this->form_validation->run()==TRUE) {
+			$dados = array(
+					'nome' => $this->input->post('cargo')
+				);
 
-		$dados = array(
-				'titulo' => 'CodeIgniter - CRUD',
-				'subTitulo' => 'Listar Cargos',
-				'cargos' => $this->cargo_model->get_cargos_all()->result()
-			);
+			$this->cargo_model->set_cargo($dados);
 
-		$this->load->view('cargo/listar', $dados);	
+			$dados = array(
+					'titulo' => 'CodeIgniter - CRUD',
+					'subTitulo' => 'Listar Cargos',
+					'cargos' => $this->cargo_model->get_cargos_all()->result()
+				);
+
+			$this->load->view('cargo/listar', $dados);
+		} else {
+			$dados = array(
+					'titulo' => 'CodeIgniter - CRUD',
+					'subTitulo' => 'Inserir Cargo',
+				);
+
+			$this->load->view('cargo/inserir', $dados);
+		}
 	}
 }

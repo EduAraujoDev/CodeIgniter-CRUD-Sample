@@ -14,6 +14,8 @@
 		<br><br>
 
 		<?php 
+			echo validation_errors();
+
 			echo form_open('cargo/inserirNovoCargo');
 
 			echo form_label('Descrição do cargo', 'cargo');

@@ -14,6 +14,8 @@
 		<br><br>
 
 		<?php 
+			echo validation_errors();
+
 			echo form_open('departamento/inserirNovoDepartamento');
 
 			echo form_label('Descrição do departamento', 'departamento');
