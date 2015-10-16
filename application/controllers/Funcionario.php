@@ -3,10 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Funcionario extends CI_Controller {
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
 
         $this->load->model('funcionario_model','funcionario_model');
+        $this->load->model('departamento_model','departamento_model');
+        $this->load->model('cargo_model','cargo_model');
     }
 
     public function listar()
@@ -15,7 +18,7 @@ class Funcionario extends CI_Controller {
 			'titulo' => 'CodeIgniter - CRUD',
 			'subTitulo' => 'Listar Funcionarios',
 			'funcionarios' => $this->funcionario_model->get_funcionarios_all()->result()
-		);
+			);
 
 		$this->load->view('funcionario/listar', $dados);
 	}
@@ -25,7 +28,9 @@ class Funcionario extends CI_Controller {
 		$dados = array(
 			'titulo' => 'CodeIgniter - CRUD',
 			'subTitulo' => 'Inserir Funcionarios',
-		);
+			'departamentos' => $this->departamento_model->get_departamentos_all()->result(),
+			'cargos' => $this->cargo_model->get_cargos_all()->result()
+			);
 
 		$this->load->view('funcionario/inserir', $dados);
 	}		
