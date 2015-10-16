@@ -10,6 +10,7 @@
 
 	<a href="<?php echo base_url() ?>">Principal</a> |
 	<a href="<?php echo base_url().'departamento/listar' ?>">Listar</a> |
+	<a href="<?php echo base_url().'departamento/inserir' ?>">Incluir</a>
 
 	<br><br>
 

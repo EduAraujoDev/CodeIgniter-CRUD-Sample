@@ -14,13 +14,7 @@
 
 	<br><br>
 
-	<?php
-		foreach ($cargos as $cargo) {
-			$this->table->add_row($cargo->id_cargo, $cargo->nome);
-		}
-
-		echo $this->table->generate();
-	?>
+	
 
 	</body>
 </html>

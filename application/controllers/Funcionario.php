@@ -19,4 +19,14 @@ class Funcionario extends CI_Controller {
 
 		$this->load->view('funcionario/listar', $dados);
 	}
+
+	public function inserir()
+	{
+		$dados = array(
+			'titulo' => 'CodeIgniter - CRUD',
+			'subTitulo' => 'Inserir Funcionarios',
+		);
+
+		$this->load->view('funcionario/inserir', $dados);
+	}		
 }
