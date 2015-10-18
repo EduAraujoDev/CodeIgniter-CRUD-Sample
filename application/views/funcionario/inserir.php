@@ -31,7 +31,6 @@
 
 			$list = array();
 			$list[''] = 'Selecione um cargo';
-
 			foreach ($cargos as $cargo) {
 				$list[$cargo->id_cargo] = ucfirst(htmlspecialchars($cargo->nome));
 			}
@@ -42,8 +41,6 @@
 
 			$list = array();
 			$list[''] = 'Selecione um departamento';
-
-
 			foreach ($departamentos as $departamento) {
 				$list[$departamento->id_departamento] = ucfirst(htmlspecialchars($departamento->nome));
 			}			

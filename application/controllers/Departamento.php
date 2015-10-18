@@ -36,7 +36,8 @@ class Departamento extends CI_Controller {
 		$this->form_validation->set_rules('departamento', 'departamento', 'required');
         $this->form_validation->set_message('required','Digite um nome para o novo departamento!');
 
-		if($this->form_validation->run()==TRUE) {
+		if($this->form_validation->run()==TRUE) 
+		{
 			$dados = array(
 					'nome' => $this->input->post('departamento')
 				);

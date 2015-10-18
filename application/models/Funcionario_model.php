@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Funcionario_model extends CI_Model{
-    public function get_funcionarios_all(){
+    public function get_funcionarios_all()
+    {
     	$this->db->select
     	('
     		funcionario.id_funcionario, 
@@ -19,5 +20,12 @@ class Funcionario_model extends CI_Model{
     	$this->db->order_by('id_funcionario', 'ASC');
 
         return $this->db->get();
+    }
+
+    public function set_funcionario($dados=NULL)
+    {
+        if($dados <> NULL){
+            $this->db->insert('funcionario',$dados);
+        }
     }
 }
